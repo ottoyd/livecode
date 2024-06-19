@@ -26,7 +26,7 @@ class Merk {
             const query = `INSERT INTO public.merk("Name", "Deskripsi") 
             VALUES($1, $2) RETURNING *`
             const result = await db.query(query, [Name, Deskripsi])
-            return new Product(result.rows[0])
+            return new Merk(result.rows[0])
         } catch (error) {
             throw (error)
         }
